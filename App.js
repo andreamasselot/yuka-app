@@ -4,11 +4,19 @@ import {
   createNativeStackNavigator,
   NavigationContainer,
 } from "@react-navigation/native-stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
 import HomeScreen from "./containers/HomeScreen";
+
+const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator></Stack.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name="Home">{() => <HomeScreen />}</Stack.Screen>
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
